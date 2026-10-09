@@ -1,33 +1,22 @@
-<!DOCTYPE html><html lang="sw"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pendo TV | Christian Gospel TV Shianda - Rose Muhando & Swahili Gospel</title><script src="https://cdn.tailwindcss.com"></script><style>.ticker{animation:scroll 30s linear infinite}@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}</style></head>
-<body class="bg-black"><div class="max-w-[480px] mx-auto bg-black min-h-screen">
-<div class="relative aspect-video bg-[#111]"><iframe class="w-full h-full" src="https://www.youtube.com/embed/videoseries?list=PLt8m2J5M0gY5h5Kq7y8u9o0i1j2k3l4m5n" srcdoc="<style>body{margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#111;color:white;font-family:sans-serif;text-align:center}</style><div><p style='font-size:40px'>🙏</p><p><b>PENDO TV GOSPEL LIVE</b><br><span style='color:#facc15'>Rose Muhando • Christina Shusho • Bahati Bukuku</span><br><br>Click WATCH LIVE below</p></div>"></iframe>
+<!-- PLAYER WITH SOUND -->
+<div class="relative aspect-video bg-[#111] overflow-hidden" id="playerBox">
+<iframe id="liveFrame" class="w-full h-full" src="https://www.youtube.com/embed/86YLFOog4GM?enablejsapi=1&mute=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<!-- UNMUTE OVERLAY - Click to hear Rose Muhando -->
+<div id="unmuteOverlay" onclick="unmuteTV()" class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center cursor-pointer">
+<p class="text-white text-4xl">🔊</p>
+<p class="text-white font-black text-[16px] mt-2">TAP TO HEAR GOSPEL</p>
+<p class="text-yellow-400 text-[11px] mt-1">Bonyeza hapa usikie Rose Muhando</p>
+<button class="mt-3 bg-yellow-500 text-black font-black px-6 py-2 rounded-full text-[13px]">🎵 UNMUTE PENDO TV</button>
+</div>
+
 <div class="absolute top-2 left-2 flex gap-1"><span class="bg-red-600 text-white text-[10px] font-black px-2">LIVE</span><span class="bg-yellow-500 text-black text-[10px] font-black px-2">CHRISTIAN TV</span></div>
-<div class="absolute bottom-0 left-0 right-0 flex h-7"><div class="bg-red-600 text-white font-black text-[10px] px-3 flex items-center">NENO LA MUNGU</div><div class="bg-white flex-1 overflow-hidden relative flex items-center"><div id="ticker" class="ticker absolute whitespace-nowrap text-[11px] font-bold"></div></div></div></div>
+</div>
 
-<div class="bg-gradient-to-r from-yellow-900 to-black p-3 flex justify-between"><div><p class="text-[10px] text-yellow-400 font-bold">SA SA HII HEWANI • <span id="nowTime"></span></p><h2 id="nowTitle" class="text-white font-black text-[15px]"></h2><p id="nowDesc" class="text-yellow-100/70 text-[11px]"></p></div><div id="nowBadge" class="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full"></div></div>
-
-<div class="bg-white p-4"><h3 class="font-black text-[13px] border-l-4 border-yellow-600 pl-3">RATIBA YA LEO • 05:00-00:00 | GOSPEL 24HRS <span id="clock" class="bg-black text-white px-2 py-1 rounded ml-2 text-[10px]"></span></h3><div id="list" class="mt-3 space-y-2"></div>
-
-<div class="mt-4 bg-yellow-50 border border-yellow-200 rounded-xl p-3"><p class="font-black text-[12px]">🎵 NYIMBO ZA INJILI TUNAZOCHEZA:</p><p class="text-[11px] mt-1">Rose Muhando - Nibebe, Jipange Sawa, Yesu Nakupenda | Christina Shusho - Shusha Nyavu | Bahati Bukuku - Dunia Haina Huruma | Guardian Angel - Hadithi | Eunice Njeri, Mercy Masika, Emmy Kosgei, Solomon Mkubwa</p><p class="text-[10px] mt-2 text-gray-600">Auto Program: Wakati watangazaji hawapo studio, TV inaendelea na nyimbo za Injili, mahubiri ya replay na maombi hadi timu irudi.</p></div>
-
-<div class="mt-3 bg-black rounded-xl p-3 text-white text-center"><p class="font-black text-[12px]">PENDO TV - CHRISTIAN GOSPEL CHANNEL</p><p class="text-[11px] text-yellow-400">Shianda, Mumias, Kakamega</p><p class="text-[10px] mt-1">Paybill: 522533 Acc: 9000613 | Studio WhatsApp: 0718899014</p><p class="text-[9px] mt-2 text-white/50">*Ikiwa haipo Pendo TV, si habari ya Mungu!*</p></div></div></div>
 <script>
-const sched=[
-{h:"05:00",e:"06:00",t:"Asubuhi ya Baraka & Maombi",d:"Maombi ya asubuhi + Nyimbo za Rose Muhando - Nibebe",type:"auto",artist:"Rose Muhando"},
-{h:"06:00",e:"09:00",t:"Kesho Yetu LIVE",d:"Neno la Mungu LIVE studio + maombezi",type:"live",artist:"LIVE"},
-{h:"09:00",e:"12:00",t:"Sifa na Kuabudu",d:"Gospel Swahili nonstop: Christina Shusho, Bahati Bukuku, Emmy Kosgei - Auto",type:"auto",artist:"Shusho • Bukuku"},
-{h:"12:00",e:"14:00",t:"Mchana wa Neno LIVE",d:"Mahubiri LIVE + Ushuhuda wa jamii",type:"live",artist:"LIVE"},
-{h:"14:00",e:"17:00",t:"Nyimbo za Matumaini",d:"Rose Muhando Special, Mercy Masika, Eunice Njeri - Auto Program",type:"auto",artist:"Rose Muhando"},
-{h:"17:00",e:"19:00",t:"Jioni ya Baraka",d:"LIVE - Vijana kwa Kristo, maswali ya Biblia",type:"live",artist:"LIVE"},
-{h:"19:00",e:"21:30",t:"Habari Njema Prime Time",d:"LIVE - Habari za Kikristo Shianda & Neno Kuu",type:"live",artist:"LIVE"},
-{h:"21:30",e:"00:00",t:"Kesha la Sifa & Maombi",d:"Worship night, Rose Muhando - Jipange Sawa, Guardian Angel hadi asubuhi",type:"auto",artist:"Rose Muhando Night"},
-];
-function toM(t){let [a,b]=t.split(":").map(Number);return a*60+b}
-function render(){let now=new Date();let cur=now.getHours()*60+now.getMinutes();document.getElementById("clock").innerText=now.toLocaleTimeString();document.getElementById("nowTime").innerText=now.toLocaleTimeString();
-let c=sched.find(s=>{let st=toM(s.h),en=toM(s.e)||1440;return cur>=st&&cur<en})||sched[7];
-document.getElementById("nowTitle").innerText=c.t;document.getElementById("nowDesc").innerText=c.d+" • "+c.artist;
-document.getElementById("ticker").innerText=`SA SA HII: ${c.t} | ${c.d} | TUNACHEZA: ${c.artist} | Tuma ujumbe WhatsApp 0718899014 | Pendo TV - Kituo cha Kikristo Shianda`;
-document.getElementById("nowBadge").innerText=c.type==="live"?"LIVE STUDIO":c.artist;
-let h="";sched.forEach(s=>{let st=toM(s.h),en=toM(s.e)||1440;let is=cur>=st&&cur<en;h+=`<div class="border-l-4 ${is?'border-yellow-500 bg-yellow-50':'border-gray-200'} p-2.5 rounded-r flex justify-between"><div><p class="text-[10px] font-bold ${is?'text-yellow-700':''}">${s.h}-${s.e}</p><p class="text-[13px] font-black">${s.t}</p><p class="text-[10px] text-gray-600">${s.d}</p><p class="text-[9px] text-yellow-600 font-bold mt-1">🎵 ${s.artist}</p></div><span class="text-[9px] font-black ${s.type==='live'?'text-red-600':'text-yellow-700'}">${s.type.toUpperCase()}${is?' • NOW':''}</span></div>`});document.getElementById("list").innerHTML=h}
-setInterval(render,1000);render();
-</script></body></html>
+function unmuteTV(){
+document.getElementById('unmuteOverlay').style.display='none';
+let f=document.getElementById('liveFrame');
+f.src=f.src+'&autoplay=1';
+}
+</script>
