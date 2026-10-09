@@ -3,59 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pendo TV Christian</title>
+<title>Pendo TV Christian | Live Gospel 24/7</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="bg-black text-white">
-<div class="max-w-[480px] mx-auto">
+<body class="bg-[#0a0a0a] text-white">
+<div class="max-w-[480px] mx-auto bg-black min-h-screen pb-10">
 
-<div class="bg-yellow-500 p-3 text-black font-black text-center">PENDO TV CHRISTIAN - LIVE GOSPEL</div>
-
-<!-- VISUAL - Rose Muhando Photo (since YouTube blocks sound) -->
-<div class="relative aspect-video bg-[#111] flex items-center justify-center">
-<img src="https://i.ytimg.com/vi/8GW8e5X0NfQ/maxresdefault.jpg" class="w-full h-full object-cover opacity-60">
-<div class="absolute inset-0 flex flex-col items-center justify-center">
-<p class="text-6xl">🎵</p>
-<p class="font-black text-[18px] mt-2">ROSE MUHANDO GOSPEL</p>
-<p class="text-yellow-400 text-[12px]">Live Worship</p>
-</div>
-<div class="absolute top-2 left-2 bg-red-600 text-white text-[10px] px-2 font-black">● LIVE</div>
+<!-- HEADER -->
+<div class="bg-gradient-to-r from-yellow-600 to-yellow-400 p-3 flex justify-between items-center sticky top-0 z-20">
+<span class="font-black text-black text-[14px]"><i class="fa fa-tv"></i> PENDO TV CHRISTIAN</span>
+<span class="bg-red-600 text-white text-[9px] px-2 py-1 rounded font-black animate-pulse">● LIVE</span>
 </div>
 
-<!-- THIS WILL HAVE SOUND 100% - DIRECT AUDIO -->
-<div class="bg-[#1a1a1a] p-4">
-<p class="text-yellow-400 text-[10px] font-bold">🔊 SOUND PLAYER - BONYEZA PLAY HAPA</p>
-
-<audio id="gospelAudio" controls autoplay style="width:100%; margin-top:8px;">
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
-
-<p class="text-[11px] text-gray-400 mt-2">↑ Bonyeza play button hapo juu usikie sauti. Kama unasikia muziki, sauti inafanya kazi!</p>
-
-<button onclick="document.getElementById('gospelAudio').play()" class="w-full mt-3 bg-yellow-500 text-black font-black py-3 rounded-full text-[14px]">🔊 BONYEZA HAPA KUSIKIA SAUTI</button>
-
-<p class="text-[10px] text-center mt-2 text-gray-500">Ukisikia sauti hapa, YouTube ndio ilikuwa imeblock. Tutaiweka Gospel MP3 yako ya Rose Muhando hapa.</p>
+<!-- PLAYER -->
+<div class="relative aspect-video bg-[#111]">
+<img src="https://i.ytimg.com/vi/8GW8e5X0NfQ/maxresdefault.jpg" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
+<i class="fa fa-music text-yellow-400 text-4xl"></i>
+<p id="nowPlay" class="font-black mt-2 text-[16px] text-center px-2">Rose Muhando - Nibebe</p>
+</div>
+<div class="absolute bottom-2 left-2 right-2">
+<audio id="player" controls style="width:100%; height:32px;"></audio>
+</div>
 </div>
 
-<!-- PROGRAM BACK -->
+<div class="bg-[#1a1a1a] p-2 flex gap-2">
+<button onclick="playSong('Rose Muhando - Nibebe')" class="flex-1 bg-yellow-500 text-black font-black py-2 rounded-full text-[11px]">▶ PLAY</button>
+<button onclick="document.getElementById('player').pause()" class="bg-[#333] px-4 py-2 rounded-full text-[11px]">PAUSE</button>
+</div>
+
+<!-- SEARCH REQUEST - NEW -->
+<div class="p-3 bg-white text-black">
+<h3 class="font-black text-[13px]"><i class="fa fa-search text-yellow-600"></i> TAFUTA NYIMBO / REQUEST</h3>
+<input id="searchBox" onkeyup="filterSongs()" type="text" placeholder="Andika jina la wimbo... e.g Rose, Shusho, Kasha" class="w-full mt-2 border-2 border-yellow-500 rounded-full px-4 py-2 text-[13px] outline-none">
+<p class="text-[10px] text-gray-500 mt-1">Tafuta na bonyeza REQUEST kutuma kwa Studio WhatsApp</p>
+<div id="songList" class="mt-3 space-y-1 max-h-[220px] overflow-y-auto"></div>
+</div>
+
+<!-- FULL PROGRAM 05:00 - MIDNIGHT -->
 <div class="p-3">
-<p class="font-black text-[12px]">TODAY PROGRAM</p>
-<div class="text-[11px] mt-2 space-y-1">
-<div class="bg-yellow-500 text-black p-2 rounded font-black flex justify-between"><span>06:00-12:00</span><span>Rose Muhando Worship LIVE</span></div>
-<div class="bg-[#222] p-2 rounded flex justify-between"><span>12:00-18:00</span><span>Gospel Mix</span></div>
-<div class="bg-[#222] p-2 rounded flex justify-between"><span>18:00-05:00</span><span>Night Prayers</span></div>
+<h3 class="font-black text-[13px] mb-2"><i class="fa fa-clock text-yellow-500"></i> FULL PROGRAM - TODAY (05:00 - 00:00)</h3>
+<div id="programBox" class="space-y-1"></div>
 </div>
+
+<div class="bg-yellow-500 p-3 text-black text-center mt-3">
+<p class="font-black text-[12px]">Support Pendo TV: Paybill 247247 A/C 123456</p>
+<p class="text-[10px]">Pendo TV Christian - Shianda, Kakamega</p>
 </div>
 
 </div>
+
 <script>
-// Force play after click
-document.addEventListener('click', function(){
-let a=document.getElementById('gospelAudio');
-a.muted=false;
-a.volume=1;
-a.play();
-});
-</script>
-</body>
-</html>
+const songs = [
+"Rose Muhando - Nibebe","Rose Muhando - Jipange Sawasawa","Rose Muhando - Utamu Wa Yesu",
+"Christina Shusho - Nimefunguliwa","Christina Shusho - Unikumbuke","Rose Muhando - Kama si Wewe",
+"Goodluck Gozbert
