@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendo TV Live - Shianda, Kakamega</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+<header class="bg-black text-white sticky top-0">
+<div class="max-w-md mx-auto px-4 py-3 flex items-center gap-3">
+<div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-black">TV</div>
+<div><h1 class="font-extrabold">Pendo TV</h1><p class="text-[10px] opacity-70">Live from Shianda</p></div>
+<div class="ml-auto text-[10px] bg-red-600 px-2 py-1 rounded-full">LIVE ●</div>
+</div></header>
+
+<div class="max-w-md mx-auto">
+<div class="bg-black aspect-video relative flex items-center justify-center">
+<video id="tvPlayer" class="w-full h-full" poster="https://picsum.photos/600/340" controls>
+<source src="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" type="application/x-mpegURL">
+</video>
+<div id="playOverlay" class="absolute inset-0 bg-black/50 flex items-center justify-center">
+<button onclick="document.getElementById('tvPlayer').play(); this.parentElement.style.display='none'" class="w-16 h-16 bg-white rounded-full text-2xl">▶️</button>
+</div></div>
+
+<div class="bg-red-600 text-white p-3 flex justify-between">
+<div><p class="text-xs">NOW SHOWING</p><p class="font-bold text-sm">Pendo News Hour</p></div>
+<span class="bg-white text-red-600 px-3 py-1 rounded-full text-xs font-bold">LIVE</span></div>
+
+<div class="p-4">
+<h3 class="font-black border-l-4 border-red-600 pl-3">Today's Program</h3>
+<div class="mt-3 space-y-2">
+<div class="bg-white p-3 rounded-xl shadow-sm"><p class="text-xs font-bold text-red-600">06:00 - 09:00</p><p class="text-sm font-semibold">Morning News & Talk - LIVE NOW</p></div>
+<div class="bg-white p-3 rounded-xl shadow-sm"><p class="text-xs font-bold">19:00 - 21:00</p><p class="text-sm font-semibold">Prime Time News</p></div>
+</div>
+<a href="https://wa.me/254718899014?text=Hello%20Pendo%20TV" class="mt-6 bg-[#25D366] text-white rounded-xl p-3 block">💬 WhatsApp Studio</a>
+</div></div>
+</body></html>
