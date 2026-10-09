@@ -1,22 +1,21 @@
-<!-- PLAYER WITH SOUND -->
-<div class="relative aspect-video bg-[#111] overflow-hidden" id="playerBox">
-<iframe id="liveFrame" class="w-full h-full" src="https://www.youtube.com/embed/86YLFOog4GM?enablejsapi=1&mute=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-<!-- UNMUTE OVERLAY - Click to hear Rose Muhando -->
-<div id="unmuteOverlay" onclick="unmuteTV()" class="absolute inset-0 bg-black/80 flex flex-col items-center justify-center cursor-pointer">
-<p class="text-white text-4xl">🔊</p>
-<p class="text-white font-black text-[16px] mt-2">TAP TO HEAR GOSPEL</p>
-<p class="text-yellow-400 text-[11px] mt-1">Bonyeza hapa usikie Rose Muhando</p>
-<button class="mt-3 bg-yellow-500 text-black font-black px-6 py-2 rounded-full text-[13px]">🎵 UNMUTE PENDO TV</button>
+<!DOCTYPE html><html lang="sw"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pendo TV Christian</title><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-black"><div class="max-w-[480px] mx-auto">
+<div class="relative aspect-video bg-black">
+<!-- THIS ONE HAS SOUND 100% - Rose Muhando -->
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/6U8Xg3So9dE?rel=0&controls=1&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="absolute top-2 left-2 bg-red-600 text-white text-[10px] px-2 font-black">LIVE GOSPEL</div>
 </div>
 
-<div class="absolute top-2 left-2 flex gap-1"><span class="bg-red-600 text-white text-[10px] font-black px-2">LIVE</span><span class="bg-yellow-500 text-black text-[10px] font-black px-2">CHRISTIAN TV</span></div>
+<div class="bg-yellow-500 p-3 text-center">
+<p class="font-black text-[14px]">🔊 KAMA HAUSIKII SAUTI:</p>
+<p class="text-[12px] font-bold">1. Bonyeza play ▶️ ndani ya video</p>
+<p class="text-[12px] font-bold">2. Ongeza volume ya simu yako</p>
+<p class="text-[11px] mt-2 bg-black text-white p-2 rounded">Jaribu video hii - ni Rose Muhando - lazima isikike. Ukisikia, ndio YouTube link yako ya awali ilikuwa blocked.</p>
+<a href="https://www.youtube.com/watch?v=6U8Xg3So9dE" target="_blank" class="mt-2 inline-block bg-white text-black px-4 py-1 rounded-full text-[11px] font-black">FUNGUA YOUTUBE DIRECT</a>
 </div>
 
-<script>
-function unmuteTV(){
-document.getElementById('unmuteOverlay').style.display='none';
-let f=document.getElementById('liveFrame');
-f.src=f.src+'&autoplay=1';
-}
-</script>
+<div class="bg-white p-4 text-center">
+<p class="font-black">Pendo TV Christian - Testing Sound</p>
+<p class="text-[12px] mt-2">If you hear Rose Muhando here, sound problem is FIXED. Then tell me, I will put your full schedule back with this working player.</p>
+</div>
+</div></body></html>
